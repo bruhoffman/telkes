@@ -4,10 +4,10 @@
 // se não passar a marca, retorna todos os carros
 
 import { log } from "console"
-import { TCarro, frota } from "./frota"
+import { TCarro, frota, TCarroCor } from "./frota"
 
 
-const buscarCarrosPorMarca = (frota: TCarro[], marca?: string): TCarro[] => {
+/* const buscarCarrosPorMarca = (frota: TCarro[], marca?: string): TCarro[] => {
 
     if (marca === undefined) {
         return frota
@@ -15,14 +15,14 @@ const buscarCarrosPorMarca = (frota: TCarro[], marca?: string): TCarro[] => {
 
     return frota.filter((carro) => carro.marca.toLowerCase() === marca.toLowerCase())
 
-}
+} */
 
 //console.log(buscarCarrosPorMarca(frota, 'Chevrolet'))
 //console.log(buscarCarrosPorMarca(frota))
 
 // função que a quantidade de carros por ano
 
-const contarCarrosPorAno = (frota: TCarro[], ano: number):number => {
+/* const contarCarrosPorAno = (frota: TCarro[], ano: number):number => {
 
     let anoCarro:number = 0
 
@@ -34,7 +34,7 @@ const contarCarrosPorAno = (frota: TCarro[], ano: number):number => {
 
 }
 
-console.log(contarCarrosPorAno(frota, 2020))
+console.log(contarCarrosPorAno(frota, 2020)) */
 
 
 // tarefa de casa
@@ -42,5 +42,15 @@ console.log(contarCarrosPorAno(frota, 2020))
 
 
 
+const adicionaCor = (frota: TCarro[], modelo: string, cor: string): TCarro[] => {
+    
+    let novoCarro: TCarroCor;
+
+    return (
+        frota
+        .filter((carro) => carro.modelo.toUpperCase() === modelo.toUpperCase())
+        .map((carro)=> novoCarro = {...carro, cor:cor}))
+}
 
 
+console.table(adicionaCor(frota, "uno", "Vermelho"))

@@ -4,6 +4,13 @@ export type TCarro = {
     ano: number
 }
 
+export type TCarroCor = {
+    marca: string,
+    modelo: string,
+    ano: number,
+    cor: string
+}
+
 export const frota: TCarro[] = [
     {
         marca: 'Chevrolet',
